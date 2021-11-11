@@ -19,21 +19,3 @@ for file in witsml.rglob('*.xml'):
 trajectory = pd.DataFrame(data)
 fig = px.line_3d(trajectory, x="dispNs", y="dispEw", z="tvd", color='nameWell')
 fig.show()
-
-# tree = et.parse(r'D:\codes\python\volve_things\witsml\4.xml')
-#
-# for elem in tree.getiterator():
-#     elem.tag = et.QName(elem).localname
-#
-# data = defaultdict(list)
-#
-# for traj in tree.findall('trajectory/trajectoryStation'):
-#     data['dispNs'].append(float(traj.find('dispNs').text))
-#     data['dispEw'].append(float(traj.find('dispEw').text))
-#     data['tvd'].append(float(traj.find('tvd').text))
-#     data['incl'].append(traj.find('incl').text)
-#
-# trajectory = pd.DataFrame(data)
-#
-# fig = px.line_3d(trajectory, x="dispNs", y="dispEw", z="tvd")
-# fig.show()
